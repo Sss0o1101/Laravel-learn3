@@ -12,8 +12,33 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = [
+            (object) ['title' => 'title1', 'body' => 'body1'],
+            (object) ['title' => 'title2', 'body' => 'body2'],
+            (object) ['title' => 'title3', 'body' => 'body3'],
+        ];
+
+        return view('posts.index', ['posts' => $posts]); //->with('posts', Post::getAllPosts());
     }
+
+    public function index2()
+    {
+        $posts = [
+            (object) ['title' => 'title1', 'body' => 'body1'],
+            (object) ['title' => 'title2', 'body' => 'body2'],
+            (object) ['title' => 'title3', 'body' => 'body3'],
+        ];
+
+        return view('posts.index2', ['posts' => $posts]);
+    }
+
+
+
+
+
+
+
+
 
     /**
      * Show the form for creating a new resource.
