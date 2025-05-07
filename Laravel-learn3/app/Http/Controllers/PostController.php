@@ -12,7 +12,26 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('posts.index')->with('posts', Post::getAllPosts());
+        $posts = [
+            (object) [
+                'title' => '投稿1',
+                'body' => '投稿1の本文です',
+            ],
+            (object) [
+                'title' => '投稿2',
+                'body' => '投稿2の本文です',
+            ],
+            (object) [
+                'title' => '投稿3',
+                'body' => '投稿3の本文です',
+            ],
+        ];
+
+        //異なる書き方
+        //return view('posts.index',['posts' => $posts,]);
+        return view('posts.index')->with('posts', $posts);
+
+        //return view('posts.index')->with('posts', Post::getAllPosts());
     }
 
     /**
