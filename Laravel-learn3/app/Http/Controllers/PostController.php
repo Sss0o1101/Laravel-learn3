@@ -14,16 +14,16 @@ class PostController extends Controller
     {
         $posts = [
             (object) [
-                'title' => '投稿1',
-                'body' => '投稿1の本文です',
+                'title' => '最初の投稿',
+                'body' => 'これは、最初の投稿の本文です',
             ],
             (object) [
-                'title' => '投稿2',
-                'body' => '投稿2の本文です',
+                'title' => '2番目の投稿',
+                'body' => 'これは、2番目の投稿の本文です',
             ],
             (object) [
-                'title' => '投稿3',
-                'body' => '投稿3の本文です',
+                'title' => '3番目の投稿',
+                'body' => 'これは、3番目の投稿の本文です',
             ],
         ];
 
@@ -32,6 +32,28 @@ class PostController extends Controller
         return view('posts.index')->with('posts', $posts);
 
         //return view('posts.index')->with('posts', Post::getAllPosts());
+    }
+
+    public function index2()
+    {
+        $posts = [
+            (object) [
+                'title' => '最初の投稿',
+                'body' => 'これは、最初の投稿の本文です',
+            ],
+            (object) [
+                'title' => '2番目の投稿',
+                'body' => 'これは、2番目の投稿の本文です',
+            ],
+            (object) [
+                'title' => '3番目の投稿',
+                'body' => 'これは、3番目の投稿の本文です',
+            ],
+        ];
+
+        //異なる書き方
+        //return view('posts.index',['posts' => $posts,]);
+        return view('posts.index2')->with('posts', $posts);
     }
 
     /**
