@@ -11,6 +11,7 @@ Route::get('/', function () {
 
 // 投稿一覧
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+Route::get('/posts2', [PostController::class, 'index2'])->name('posts.index2');
 
 // 投稿作成
 Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
